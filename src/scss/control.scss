@@ -1,0 +1,37 @@
+@import "../scss/variables";
+@import "../scss/animations.scss";
+.control-container {
+  display: flex;
+  justify-content: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .controls {
+      background-color: aliceblue;
+      width: 45vw;
+      height: 70vh;
+      border-radius: 10px;
+      background: #6e716f;
+      box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      #not-connected {
+        position: absolute;
+        width: 34%;
+        height: 100%;
+        top: 21vw;
+        right: 13vw;
+        z-index: 3;
+      }
+      #connected {
+        position: absolute;
+        width: 34%;
+        height: 100%;
+        top: 21vw;
+        right: 13vw;
+        z-index: 3;
+      }
+    }
+  }
+}

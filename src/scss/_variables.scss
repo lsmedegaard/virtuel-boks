@@ -1,0 +1,13 @@
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../assets/fonts/RobotoCondensed-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: RobotoBold;
+  src: url("../assets/fonts/RobotoCondensed-Bold.ttf") format("truetype");
+}
+
+$bold: "font-family", RobotoBold;
+$regular: "font-family", RobotoRegular;
+
+$red: red;

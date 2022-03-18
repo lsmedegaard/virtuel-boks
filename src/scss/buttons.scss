@@ -1,0 +1,21 @@
+@import "/src/scss/variables";
+
+.buttons-container {
+  width: 10vw;
+  button {
+    all: unset;
+    background-color: #1a269f;
+    height: 2vw;
+    border-radius: 50px;
+    color: black;
+    text-align: center;
+    z-index: 4;
+    font-family: $bold;
+    &:hover {
+      background-color: blue;
+      opacity: 70%;
+      border: none;
+      color: white;
+    }
+  }
+}

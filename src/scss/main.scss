@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(180deg, rgba(64, 181, 73, 1) 0%, rgba(122, 194, 85, 1) 70%, rgba(217, 235, 199, 1) 100%);
+  .grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .svg-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+
+      #baggrund {
+        width: 30vw;
+        height: 100%;
+        z-index: 1;
+      }
+      #aabnet {
+        width: 14vw;
+        height: 100%;
+        position: absolute;
+        top: 2vw;
+        left: 18vw;
+        z-index: 2;
+      }
+      #charging {
+        width: 11vw;
+        height: 43%;
+        position: absolute;
+        top: 60vw;
+        left: 19.5vw;
+        z-index: 1;
+      }
+      #opladerIndgang {
+        width: 11vw;
+        position: absolute;
+        height: 100%;
+        top: 6.5vw;
+        left: 19.5vw;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
