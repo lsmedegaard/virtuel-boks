@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "./button";
+import Button from "./Button";
 import "../scss/control.scss"
-import NotConnected from "./NotConnected";
-import Connected from "./Connected";
+import Connected from "./CarSVG";
 import { useState } from "react";
 
 
@@ -25,28 +24,66 @@ function Control (props) {
                     value: !props.settings[setting].value
                 }
             })
+            props.settings[setting].value
+                ? props.settings[setting].stopFunction()
+                : props.settings[setting].startFunction()
+            if (props.settings[setting].duration) {
+                setTimeout(() => {
+                    props.setSettings({
+                        ...props.settings,
+                        [setting]: {
+                            ...props.settings[setting],
+                            value: false
+                        }
+                    })
+                    props.settings[setting].stopFunction()
+                }, props.settings[setting].duration)
+            }
             setError(false)
             return false
         }
     }
 
+    const updateDuration = (setting) => {
+        return (duration) => {
+            props.setSettings({
+                ...props.settings,
+                [setting]: {
+                    ...props.settings[setting],
+                    duration: duration
+                }
+            })
+        }
+    }
+
+    const buttons = []
+
+    for (const setting in props.settings) {
+        buttons.push(
+            <Button className={setting} key={setting} updateDuration={updateDuration(setting)} updateSettings={updateSettings(setting)} settings={props.settings[setting]} />
+        )
+    }
+
+
 
     return (
     <div className="control-container">
-        <div>
             <div className="controls">
-            <Button updateSettings={updateSettings('on')} defaultText={'Tænd'} changeText={'Sluk'} />
-            <Button updateSettings={updateSettings('open')} defaultText={'Åben'} changeText={'Luk'} />
-            <Button updateSettings={updateSettings('cable')} defaultText={'Indsæt oplader'} changeText={'Fjern oplader'} />
-            <Button updateSettings={updateSettings('connect')} defaultText={'Tilslut bil'} changeText={'Afmonter fra bil'} />
-            <Button updateSettings={updateSettings('charge')} defaultText={'Start opladning'} changeText={'Stop opladning'} />
-            <NotConnected settings={props.settings}/>
             <Connected settings={props.settings}/>
+            <div className="line"></div>
+            <div className="boxID">
+                <h3>Box ID</h3>
+                <input type="text" />
             </div>
-            <div className="">
+            <div className="authentication">
+                <h3>Authentication ID</h3>
+                <input type="text" />
+            </div>
+            {buttons}
+            </div>
+            <div>
                 <div className="popUp" style={{visibility: error ? 'visible' : 'hidden'}}>{error}</div>
             </div>
-        </div>
     </div>
 
     )

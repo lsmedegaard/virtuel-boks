@@ -1,29 +1,56 @@
 import React from "react";
-import SVG from "./SVG";
-import Control from "./control"
+import SVG from "./GreenbowBox";
+import Control from "./Control"
 import "../scss/main.scss"
 import { useState } from "react";
 
 
 function Main () {
 
+    const startCharging = () => {
+        console.log('opladning startet')
+    }
+
+    const stopCharging = () => {
+        console.log('opladning stoppet')
+    }
+
     const [settings, setSettings] = useState({
         on: {
+            name: 'on',
             value: false,
-            dependencies: []
-        },
+            startFunction:  () => {},
+            stopFunction:  () => {},
+            duration: null,
+            timer: false,
+            dependencies: [],
+            defaultText: 'Tænd',
+            changeText: 'Sluk'
+           },
         open: {
+            name: 'open',
             value: false,
+            startFunction: () => {},
+            stopFunction: () => {},
+            duration: null,
+            timer: false,
             dependencies: [
                 {
                     setting: "cable",
                     requiredValue: false,
                     message: "you must remove the cable before closing the lid"
                 }
-            ]
+            ],
+            defaultText: 'Åben',
+            changeText: 'Luk'
         },
         cable: {
+            name: 'cable',
             value: false,
+            startFunction: () => {},
+            stopFunction: () => {},
+            duration: null,
+            timer: false,
             dependencies: [
                 {
                     setting: "open",
@@ -35,14 +62,28 @@ function Main () {
                     requiredValue: false,
                     message: "You must stop charging before removing the cable"
                 }
-            ]
+            ],
+            defaultText: 'Indsæt oplader',
+            changeText: 'Fjern oplader'
         },
         connect: {
+            name: 'connect',
             value: false,
-            dependencies: []
+            startFunction: () => {},
+            stopFunction: () => {},
+            duration: null,
+            timer: false,
+            dependencies: [],
+            defaultText: 'Tilslut bil',
+            changeText: 'Afmonter fra bil'
         },
         charge: {
+            name: 'charge',
             value: false,
+            startFunction: startCharging,
+            stopFunction: stopCharging,
+            duration: null,
+            timer: true,
             dependencies: [{
                 setting: "connect",
                 requiredValue: true,
@@ -59,8 +100,9 @@ function Main () {
                 setting: "open",
                 requiredValue: true,
                 message: "Lid not open"
-            }]
-
+            }],
+            defaultText: 'Start opladning',
+            changeText: 'Stop opladning'
         }
     })
 

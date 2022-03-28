@@ -1,11 +1,9 @@
 import React  from "react";
 import "../scss/main.scss"
-import Charging from "./Kabel";
+import Charging from "./CableSVG";
+import Open from "./OpenLidSVG";
 
-
-import Aabnet from "./åbnet";
-
-function SVG (props) {
+function GreenbowBox (props) {
     return (
         <div className="svg-container">
             <svg id="baggrund" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.76 402.08">
@@ -47,11 +45,11 @@ function SVG (props) {
                 <path d="M300.28,322v10.83h18.64a15.51,15.51,0,0,1-5.45,7.9,15,15,0,0,1-9.15,2.76q-7.9,0-12.42-4.69t-4.51-13a23.42,23.42,0,0,1,.33-4H272.65a37.62,37.62,0,0,0-.21,4,31.87,31.87,0,0,0,3.91,15.9,27.81,27.81,0,0,0,10.91,10.87,32.1,32.1,0,0,0,15.94,3.91,30.66,30.66,0,0,0,13.58-2.92,29.3,29.3,0,0,0,9.92-7.65,28.77,28.77,0,0,0,5.54-10.23V322Z" transform="translate(-153.79 -201.58)" fill="#231f20"/>
               </g>
             </svg> 
-            <Aabnet settings={props.settings}/>
+            <Open settings={props.settings}/>
             <Charging settings={props.settings}/>
             
         </div>
         
     )
 }
-export default SVG
+export default GreenbowBox

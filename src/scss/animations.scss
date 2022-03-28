@@ -1,17 +1,11 @@
 @import "../scss/variables";
 .powering {
   offset-path: path(
-    "M 45.88 138.92 a 9.6 9.6 0 0 1 10.2 0.14 a 44.87 44.87 0 0 1 3.69 3.21 c 3.87 3.3 9.16 4.61 14.28 4.61 s 10.14 -1.18 15.12 -2.36 c 1.49 -0.35 3.16 -0.84 3.86 -2.18 c 1.2 -2.3 -1.53 -4.86 -4.13 -5.22 c -1.68 -0.22 -3.88 0.49 -3.92 2.16 a 3.19 3.19 0 0 0 0.45 1.48 A 14.1 14.1 0 0 0 95.3 148 a 14.28 14.28 0 0 0 11.84 -3.3 c 2.1 -1.86 3.72 -4.42 6.35 -5.4 a 10.07 10.07 0 0 1 4 -0.55 c 2.87 0 7.71 0.22 14.48 1"
+    "M45.88,138.92a9.6,9.6,0,0,1,10.2.14,44.87,44.87,0,0,1,3.69,3.21c3.87,3.3,9.16,4.61,14.28,4.61s10.14-1.18,15.12-2.36c1.49-.35,3.16-.84,3.86-2.18,1.2-2.3-1.53-4.86-4.13-5.22-1.68-.22-3.88.49-3.92,2.16a3.19,3.19,0,0,0,.45,1.48A14.1,14.1,0,0,0,95.3,148a14.28,14.28,0,0,0,11.84-3.3c2.1-1.86,3.72-4.42,6.35-5.4a10.07,10.07,0,0,1,4-.55c2.87,0,7.71.22,14.48,1"
   );
-  animation: powerUp 1500ms linear infinite;
-  width: 2px;
-  height: 2px;
-  offset-distance: 0%;
-  border-radius: 50%;
-  position: absolute;
-  top: 27.6vw;
-  right: 48.8vw;
-  box-shadow: 0 0 1.625px 0.875px #fff, 0 0 3.123px 1.875px #f0f, 0 0 4.25px 2.825px #0ff;
+  z-index: 1;
+  // box-shadow: 0 0 1.625px 0.875px #fff, 0 0 3.123px 1.875px #f0f, 0 0 4.25px 2.825px #0ff;
+  animation: powerUp infinite 3s;
 }
 
 @keyframes powerUp {
@@ -28,7 +22,7 @@
 }
 
 .kabelPlads {
-  animation: kabelPlads_KF 1 2000ms cubic-bezier(0.77, 0.8, 0.49, 0.98);
+  animation: kabelPlads_KF 1 1500ms ease-in;
   animation-fill-mode: both;
 }
 
@@ -44,7 +38,7 @@
   }
 }
 .kabelGone {
-  animation: kabelGone_KF 1 2000ms cubic-bezier(0.77, 0.8, 0.49, 0.98);
+  animation: kabelGone_KF 1 2000ms ease-out;
 }
 
 @keyframes kabelGone_KF {
@@ -70,12 +64,11 @@
   top: 18vw;
   right: 43.6vw;
   z-index: 5;
-  border: solid rgba(255, 0, 0, 0.9);
+  border: 1px solid rgba(255, 0, 0, 0.9);
   font-family: $bold;
   font-size: 2rem;
   text-align: center;
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5), 0px 6px 15px 5px #000000;
-
   border-radius: 10px;
   animation: popUp_KF 3000ms infinite linear both;
 }
@@ -88,7 +81,7 @@
   50% {
     background: rgba(255, 0, 0, 0.9);
     color: white;
-    border: solid white;
+    border: 1px solid white;
   }
 
   100% {

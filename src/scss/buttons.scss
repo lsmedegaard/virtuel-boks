@@ -1,11 +1,14 @@
 @import "/src/scss/variables";
 
 .buttons-container {
-  width: 10vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5vw;
   button {
     all: unset;
     background-color: #1a269f;
     height: 2vw;
+    width: 10vw;
     border-radius: 50px;
     color: black;
     text-align: center;
@@ -16,6 +19,19 @@
       opacity: 70%;
       border: none;
       color: white;
+    }
+  }
+  #input-container {
+    z-index: 99;
+    input {
+      all: unset;
+      background-color: white;
+      border-radius: 10px;
+      padding-left: 3px;
+      border: 3px solid grey;
+      &:focus {
+        border: 3px solid blue;
+      }
     }
   }
 }

@@ -8,19 +8,24 @@ import "../scss/buttons.scss"
 function Button (props) {
     
     const [show, setShow] = useState(false)
-    const [text, setText] = useState(props.defaultText)
 
     const onClick = () => {
         const error = props.updateSettings()
         if (error) return
         setShow(!show)
-        setText(text === props.defaultText ? props.changeText : props.defaultText)
     }
-    
+
+    const onChange = (event) => {
+        props.updateDuration(event.target.value)
+    }
 
     return (
-        <div className="buttons-container">
-            <button onClick={onClick}>{text}</button>
+        <div className={props.settings.name + " buttons-container"}>
+
+        <button onClick={onClick}>{props.settings.value ? props.settings.changeText : props.settings.defaultText}</button>
+        <div id="input-container" style={{display: props.settings.timer ? 'block' : 'none'}}>
+            <input type="text" onChange={onChange} value={props.settings.duration} placeholder="Oplad i x minutter"/>
+        </div>
         </div>
     )
 }

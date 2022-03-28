@@ -1,12 +1,12 @@
 import React  from "react";
 import "../scss/main.scss"
+import "../scss/animations.scss"
 
 
-
-function Aabnet (props) {
+function Open (props) {
     return (
-        <div className={props.settings.open.value ? '' : 'hide' }>
-            <svg id="aabnet" viewBox="0 0 213.98 96.52">
+        <div>
+            <svg className={props.settings.open.value ? '' : 'hide' } id="aabnet" viewBox="0 0 213.98 96.52">
 <defs>
     <clipPath id="clip-path" transform="translate(0 -85.97)">
     <path d="M76.06,97.42v4.7c-40.7,4.58-68,17.5-68,32.17v-4.7C8,114.93,35.36,102,76.06,97.42Z" fill="none"/>
@@ -216,7 +216,7 @@ function Aabnet (props) {
         </g>
     </g>
 </svg>
-<svg id="opladerIndgang" viewBox="0 0 393.98 319.94">
+<svg className={props.settings.open.value ? '' : 'hide' } id="opladerIndgang" viewBox="0 0 393.98 319.94">
   <circle cx="127.93" cy="255.01" r="55" stroke="#000" strokeMiterlimit="10" strokeWidth="19.87"/>
   <circle cx="266.93" cy="255.01" r="55" stroke="#000" strokeMiterlimit="10" strokeWidth="19.87"/>
   <circle cx="196.93" cy="133.01" r="55" stroke="#000" strokeMiterlimit="10" strokeWidth="19.87"/>
@@ -238,4 +238,4 @@ function Aabnet (props) {
     )
 }
 
-export default Aabnet
+export default Open
