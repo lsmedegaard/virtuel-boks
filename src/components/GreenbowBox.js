@@ -3,6 +3,10 @@ import '../scss/main.scss'
 import Charging from './CableSVG'
 import Open from './OpenLidSVG'
 
+GreenbowBox.propTypes = {
+  settings: Object
+}
+
 function GreenbowBox (props) {
   return (
     <div className="svg-container">

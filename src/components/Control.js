@@ -4,7 +4,10 @@ import '../scss/control.scss'
 import Connected from './CarSVG'
 import { useState } from 'react'
 
-
+Control.propTypes = {
+  settings: Object,
+  setSettings: Function
+}
 
 function Control (props) {
   const [error, setError] = useState(false)

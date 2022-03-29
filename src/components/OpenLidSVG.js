@@ -2,6 +2,9 @@ import React  from 'react'
 import '../scss/main.scss'
 import '../scss/animations.scss'
 
+Open.propTypes = {
+  settings: Object
+}
 
 function Open (props) {
   return (

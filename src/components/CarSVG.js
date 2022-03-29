@@ -2,6 +2,11 @@ import React from 'react'
 import '../scss/control.scss'
 import '../scss/animations.scss'
 
+CarSVG.propTypes = {
+  settings: Object,
+  updateDuration: Function,
+  updateSettings: Function
+}
 
 function CarSVG (props) {
 
