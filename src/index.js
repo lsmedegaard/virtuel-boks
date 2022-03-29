@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from './components/Main';
-import './scss/index.scss';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Main from './components/Main'
+import './scss/index.scss'
 
 
 
@@ -10,4 +10,4 @@ ReactDOM.render(
     <Main/>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
