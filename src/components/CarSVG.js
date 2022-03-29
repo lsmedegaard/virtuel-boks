@@ -9,16 +9,6 @@ function CarSVG (props) {
         <div className="connection">
             <svg className={props.settings.connect.value ? "" : "hide"} width="50%" height="auto" id="connected" viewBox="0 0 271.12 271.12">
             <defs>
-            <filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">
-                <feMorphology operator="dilate" radius="4" in="SourceAlpha" result="thicken" />	
-                <feGaussianBlur in="thicken" stdDeviation="5" result="blurred" />
-                <feFlood flood-color="rgb(0,186,255)" result="glowColor" />
-                <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
-                <feMerge>
-                    <feMergeNode in="softGlow_colored"/>
-                    <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-	        </filter>
             <filter id="glow">
                 <feFlood result="flood" floodColor="#FFFF00" floodOpacity="1"></feFlood>
                 <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
@@ -65,6 +55,7 @@ function CarSVG (props) {
                     <g>
                         <path id="kabel" d="M45.88,138.92a9.6,9.6,0,0,1,10.2.14,44.87,44.87,0,0,1,3.69,3.21c3.87,3.3,9.16,4.61,14.28,4.61s10.14-1.18,15.12-2.36c1.49-.35,3.16-.84,3.86-2.18,1.2-2.3-1.53-4.86-4.13-5.22-1.68-.22-3.88.49-3.92,2.16a3.19,3.19,0,0,0,.45,1.48A14.1,14.1,0,0,0,95.3,148a14.28,14.28,0,0,0,11.84-3.3c2.1-1.86,3.72-4.42,6.35-5.4a10.07,10.07,0,0,1,4-.55c2.87,0,7.71.22,14.48,1" fill="none" stroke="#1d1d1b" strokeMiterlimit="10" strokeWidth="2.02"/>
                         <circle className={props.settings.charge.value ? "powering" : "hide"} cx="2" cy="2" r="2" fill="#FFFF00" filter="url(#red-glow)"/>
+                        <circle className={props.settings.charge.value ? "powering2" : "hide"} cx="2" cy="2" r="2" fill="#FFFF00" filter="url(#red-glow)"/>
                     </g>
                     <path id="body" d="M155.06,114.59s31.22-3.23,44.14,1.79l1.62.54s16,6.82,22.61,11.31c0,0,21,3.59,24,9.15s1.08,9.51,1.08,9.51l-.9.9,1.53,1.66v3.86a15.55,15.55,0,0,1-2.2,1.46,17,17,0,0,1-8.66,2,11,11,0,0,0,.42-6.38,11.29,11.29,0,0,0-4.9-6.72,11.88,11.88,0,0,0-12.74.54s-5.21,3.41-5.21,12.2L157.75,156a14,14,0,0,0-3.77-11.3c-4.84-5-11.84-2.52-11.84-2.52s-8.25,2.7-6.64,12.21c0,0-1.26.89-4.49-1.08,0,0-3.94-9.51.36-13.46a2.53,2.53,0,0,1,.9-2.69s-.54-7.72,1.62-7.9l2.33-1.61.9-1.26s-2.52-.89-.72-1.07l.89.53,6.29-7.89s-.93-.46-.86-.94.77-.57,1.21-.68C146.29,115.83,153.42,114.82,155.06,114.59Z" fill="#81ba30"/>
                     <g id="vinduer">
