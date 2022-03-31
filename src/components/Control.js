@@ -3,6 +3,7 @@ import Button from './Button'
 import '../scss/control.scss'
 import Connected from './CarSVG'
 import { useState } from 'react'
+import '../scss/animations.scss'
 
 Control.propTypes = {
   settings: Object,
@@ -61,9 +62,10 @@ function Control (props) {
 
   const buttons = []
 
+
   for (const setting in props.settings) {
     buttons.push(
-      <Button className={setting} key={setting} updateDuration={updateDuration(setting)} updateSettings={updateSettings(setting)} settings={props.settings[setting]} />
+      <Button key={setting} updateDuration={updateDuration(setting)} updateSettings={updateSettings(setting)} settings={props.settings[setting]} />
     )
   }
 
@@ -79,7 +81,7 @@ function Control (props) {
           <input type="text" />
         </div>
         <div className="authentication">
-          <h3>Authentication ID</h3>
+          <h3>Authentication</h3>
           <input type="text" />
         </div>
         {buttons}

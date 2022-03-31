@@ -19,9 +19,15 @@ function Button(props) {
   const onChange = (event) => {
     props.updateDuration(event.target.value)
   }
+  
+  const classes = [
+    props.settings.name,
+    props.settings.class,
+    'buttons-container',
+  ]
 
   return (
-    <div className={`${props.settings.name} buttons-container`}>
+    <div className={classes.join(' ')}>
       <button onClick={onClick}>
         {props.settings.value
           ? props.settings.changeText

@@ -3,10 +3,10 @@
 .buttons-container {
   display: flex;
   justify-content: center;
-  margin-top: 1.5vw;
+  margin-top: 2vw;
   button {
     all: unset;
-    background-color: #1a269f;
+    background-color: #03c04a;
     height: 2vw;
     width: 10vw;
     border-radius: 50px;
@@ -14,23 +14,26 @@
     text-align: center;
     z-index: 4;
     font-family: $bold;
+    cursor: pointer;
     &:hover {
-      background-color: blue;
-      opacity: 70%;
+      background-color: #01a741;
       border: none;
-      color: white;
     }
   }
   #input-container {
     z-index: 99;
+    margin-top: 0.2vw;
     input {
       all: unset;
       background-color: white;
       border-radius: 10px;
       padding-left: 3px;
-      border: 3px solid grey;
+      font-family: $bold;
+      border: 3px solid #6e716f;
+      width: 9.5vw;
+      &:hover,
       &:focus {
-        border: 3px solid blue;
+        border: 3px solid #03c04a;
       }
     }
   }

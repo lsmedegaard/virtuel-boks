@@ -25,7 +25,8 @@ function Main () {
       timer: false,
       dependencies: [],
       defaultText: 'Tænd',
-      changeText: 'Sluk'
+      changeText: 'Sluk',
+      class: 'on-underline'
     },
     open: {
       name: 'open',
@@ -34,11 +35,12 @@ function Main () {
       stopFunction: () => {},
       duration: null,
       timer: false,
+      class: 'on-underline',
       dependencies: [
         {
           setting: 'cable',
           requiredValue: false,
-          message: 'you must remove the cable before closing the lid'
+          message: 'Du skal fjerne kablet, før du lukker lågen'
         }
       ],
       defaultText: 'Åben',
@@ -51,16 +53,17 @@ function Main () {
       stopFunction: () => {},
       duration: null,
       timer: false,
+      class: 'cable-underline',
       dependencies: [
         {
           setting: 'open',
           requiredValue: true,
-          message: 'You must open the lid before you can insert cable'
+          message: 'Du skal åbne lågen, før du kan indsætte kablet'
         },
         {
           setting: 'charge',
           requiredValue: false,
-          message: 'You must stop charging before removing the cable'
+          message: 'Du skal stoppe opladningen, før du fjerner kablet'
         }
       ],
       defaultText: 'Indsæt oplader',
@@ -74,8 +77,9 @@ function Main () {
       duration: null,
       timer: false,
       dependencies: [],
-      defaultText: 'Tilslut bil',
-      changeText: 'Afmonter fra bil'
+      defaultText: 'Tilslut til bil',
+      changeText: 'Afmonter fra bil',
+      class: 'connect-underline'
     },
     charge: {
       name: 'charge',
@@ -84,22 +88,23 @@ function Main () {
       stopFunction: stopCharging,
       duration: null,
       timer: true,
+      class: 'charge-underline',
       dependencies: [{
         setting: 'connect',
         requiredValue: true,
-        message: 'You must connect the cable to the car before charging can start'
+        message: 'Du skal tilslutte kablet til bilen, før opladningen kan starte'
       }, {
         setting: 'on',
         requiredValue: true,
-        message: 'You must turn on the box before you can charge'
+        message: 'Du skal først tænde boksen, før opladningen kan starte'
       }, {
         setting: 'cable',
         requiredValue: true,
-        message: 'You must insert cable to box before charging'
+        message: 'Du skal tilslutte kablet til boksen, før opladningen kan starte'
       }, {
         setting: 'open',
         requiredValue: true,
-        message: 'Lid not open'
+        message: 'Du skal åbne lågen, før opladningen kan starte'
       }],
       defaultText: 'Start opladning',
       changeText: 'Stop opladning'

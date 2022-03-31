@@ -76,11 +76,11 @@
     transform: translateY(0vw);
   }
 }
-
+//////popUP boks///////
 .popUp {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   position: absolute;
   background-color: rgb(255, 255, 255);
   width: 20vw;
@@ -88,28 +88,111 @@
   top: 18vw;
   right: 43.6vw;
   z-index: 5;
-  border: 1px solid rgba(255, 0, 0, 0.9);
+  border: 3px solid rgba(255, 0, 0, 0.9);
   font-family: $bold;
   font-size: 2rem;
   text-align: center;
-  box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5), 0px 6px 15px 5px #000000;
+  box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1), 0px 6px 15px 5px #000000;
   border-radius: 10px;
-  animation: popUp_KF 3000ms infinite linear both;
+  animation: popUp_KF 3000ms infinite linear;
+}
+//////popUP boks slut///////
+
+///////underline animation på buttons////////
+.cable-underline {
+  position: relative;
+  color: #000000;
 }
 
-@keyframes popUp_KF {
-  0% {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-  }
-  50% {
-    background: rgba(255, 0, 0, 0.9);
-    color: white;
-    border: 1px solid white;
-  }
-
-  100% {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-  }
+.cable-underline:after {
+  content: "";
+  position: absolute;
+  width: 55%;
+  transform: scaleX(0);
+  height: 2px;
+  top: 20px;
+  bottom: 0;
+  left: 44px;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  z-index: 5;
 }
+
+.cable-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.charge-underline {
+  position: relative;
+  color: #000000;
+}
+
+.charge-underline:after {
+  content: "";
+  position: absolute;
+  width: 18%;
+  transform: scaleX(0);
+  height: 2px;
+  top: 32px;
+  bottom: 0;
+  right: 236px;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  z-index: 5;
+}
+
+.charge-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.on-underline {
+  position: relative;
+  color: #000000;
+}
+
+.on-underline:after {
+  content: "";
+  position: absolute;
+  width: 19%;
+  transform: scaleX(0);
+  height: 2px;
+  top: 1.6vw;
+  bottom: 0;
+  right: 6vw;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  z-index: 5;
+}
+
+.on-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.connect-underline {
+  position: relative;
+  color: #000000;
+}
+
+.connect-underline:after {
+  content: "";
+  position: absolute;
+  width: 56%;
+  transform: scaleX(0);
+  height: 2px;
+  top: 1.5vw;
+  bottom: 0;
+  right: 3.2vw;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  z-index: 5;
+}
+
+.connect-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+///////underline animation på buttons slut////////
