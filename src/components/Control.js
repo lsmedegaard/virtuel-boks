@@ -3,11 +3,12 @@ import Button from './Button'
 import '../scss/control.scss'
 import Connected from './CarSVG'
 import { useState } from 'react'
-import '../scss/animations.scss'
+import PropTypes from 'prop-types'
+
 
 Control.propTypes = {
-  settings: Object,
-  setSettings: Function
+  settings: PropTypes.object,
+  setSettings: PropTypes.func
 }
 
 function Control (props) {

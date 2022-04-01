@@ -1,9 +1,11 @@
 import React from 'react'
 import '../scss/main.scss'
 import '../scss/animations.scss'
+import PropTypes from 'prop-types'
+
 
 Charging.propTypes = {
-  settings: Object
+  settings: PropTypes.object
 }
 
 function Charging (props) {

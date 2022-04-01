@@ -2,9 +2,11 @@ import React  from 'react'
 import '../scss/main.scss'
 import Charging from './CableSVG'
 import Open from './OpenLidSVG'
+import PropTypes from 'prop-types'
+
 
 GreenbowBox.propTypes = {
-  settings: Object
+  settings: PropTypes.object
 }
 
 function GreenbowBox (props) {

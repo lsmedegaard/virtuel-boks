@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import '../scss/buttons.scss'
+import PropTypes from 'prop-types'
 
 Button.propTypes = {
-  settings: Object,
-  updateDuration: Function,
-  updateSettings: Function
+  settings: PropTypes.object,
+  updateDuration: PropTypes.func,
+  updateSettings: PropTypes.func
 }
 
 function Button(props) {
