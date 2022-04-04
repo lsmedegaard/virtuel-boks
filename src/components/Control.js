@@ -4,7 +4,6 @@ import '../scss/control.scss'
 import Connected from './CarSVG'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import ToggleSwitch from './ToggleSwitch'
 
 Control.propTypes = {
   settings: PropTypes.object,
@@ -90,7 +89,6 @@ function Control (props) {
       <div>
         <div className="popUp" style={{visibility: error ? 'visible' : 'hidden'}}>{error}</div>
       </div>
-      <ToggleSwitch/>
     </div>
 
   )

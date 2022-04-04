@@ -11,7 +11,7 @@ Charging.propTypes = {
 function Charging (props) {
   return (
     <div id="charging">
-      <svg className={props.settings.cable.value ? 'kabelPlads' : 'kabelGone' }viewBox="0 0 191.75 424">
+      <svg className={props.settings.cable.value ? '' : 'hide' }viewBox="0 0 191.75 424">
         <defs>
           <linearGradient id="linear-gradient" x1="87.09" y1="376" x2="107.09" y2="376" gradientUnits="userSpaceOnUse">
             <stop offset="0" stopColor="#4d4d4d"/>

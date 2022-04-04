@@ -14,7 +14,7 @@ function CarSVG (props) {
 
   return (
     <div className="connection">
-      <svg className={props.settings.connect.value ? '' : 'hide'} width="50%" height="auto" id="connected" viewBox="0 0 271.12 271.12">
+      <svg className={props.settings.connect.value ? '' : 'hide'} id="connected" viewBox="0 0 271.12 271.12">
         <defs>
           <filter id="glow">
             <feFlood result="flood" floodColor="#FFFF00" floodOpacity="1"></feFlood>
@@ -137,7 +137,7 @@ function CarSVG (props) {
         </g>
                 
       </svg> 
-      <svg className={props.settings.connect.value ? 'hide' : ''} width="50%" height="auto" id="connected" viewBox="0 0 271.12 271.12">
+      <svg className={props.settings.connect.value ? 'hide' : ''} id="connected" viewBox="0 0 271.12 271.12">
         <g id="Layer_2" data-name="Layer 2">
           <g id="Layer_1-2" data-name="Layer 1">
             <path id="kabel" d="M45.88,138.92a9.6,9.6,0,0,1,10.2.14,44.87,44.87,0,0,1,3.69,3.21c3.87,3.3,9.16,4.61,14.28,4.61s10.14-1.18,15.12-2.36c1.49-.35,3.16-.84,3.86-2.18,1.2-2.3-1.53-4.86-4.13-5.22-1.68-.22-3.88.49-3.92,2.16a3.19,3.19,0,0,0,.45,1.48A14.1,14.1,0,0,0,95.3,148a14.28,14.28,0,0,0,11.84-3.3c2.1-1.86,3.72-4.42,6.35-5.4a10.07,10.07,0,0,1,4-.55c2.87,0,7.71.22,14.48,1" fill="none" stroke="#1d1d1b" strokeMiterlimit="10" strokeWidth="2.02"/>

@@ -45,37 +45,6 @@
   display: none;
 }
 
-.kabelPlads {
-  animation: kabelPlads_KF 1 1500ms ease-in;
-  animation-fill-mode: both;
-}
-
-@keyframes kabelPlads_KF {
-  0% {
-    transform: translateY(0vw);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: translateY(-29vw);
-  }
-}
-.kabelGone {
-  animation: kabelGone_KF 1 2000ms ease-out;
-}
-
-@keyframes kabelGone_KF {
-  0% {
-    transform: translateY(-29vw);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: translateY(0vw);
-  }
-}
 //////popUP boks///////
 .popUp {
   display: flex;
@@ -196,4 +165,3 @@
   transform-origin: bottom left;
 }
 ///////underline animation på buttons slut////////
-
