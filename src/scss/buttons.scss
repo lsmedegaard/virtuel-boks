@@ -3,7 +3,6 @@
 .buttons-container {
   display: flex;
   justify-content: center;
-  margin-top: 2vw;
   button {
     all: unset;
     background-color: #03c04a;
@@ -20,17 +19,17 @@
       border: none;
     }
     @include for-giant-screen {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
   #input-container {
     z-index: 99;
-    margin-top: 0.2vw;
     input {
       all: unset;
       background-color: white;
       border-radius: 10px;
       padding-left: 3px;
+      margin-top: 0.2vw;
       font-family: $bold;
       font-size: 1rem;
       border: 3px solid #6e716f;

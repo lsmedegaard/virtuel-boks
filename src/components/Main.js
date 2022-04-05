@@ -21,21 +21,20 @@ function Main () {
       value: false,
       startFunction:  () => {},
       stopFunction:  () => {},
-      duration: null,
+      duration: '',
       timer: false,
       dependencies: [],
       defaultText: 'Tænd',
       changeText: 'Sluk',
-      class: 'on-underline'
+      type: 'toggle'
     },
     open: {
       name: 'open',
       value: false,
       startFunction: () => {},
       stopFunction: () => {},
-      duration: null,
+      duration: '',
       timer: false,
-      class: 'on-underline',
       dependencies: [
         {
           setting: 'cable',
@@ -51,9 +50,8 @@ function Main () {
       value: false,
       startFunction: () => {},
       stopFunction: () => {},
-      duration: null,
+      duration: '',
       timer: false,
-      class: 'cable-underline',
       dependencies: [
         {
           setting: 'open',
@@ -74,21 +72,19 @@ function Main () {
       value: false,
       startFunction: () => {},
       stopFunction: () => {},
-      duration: null,
+      duration: '',
       timer: false,
       dependencies: [],
       defaultText: 'Tilslut til bil',
       changeText: 'Afmonter fra bil',
-      class: 'connect-underline'
     },
     charge: {
       name: 'charge',
       value: false,
       startFunction: startCharging,
       stopFunction: stopCharging,
-      duration: null,
+      duration: '',
       timer: true,
-      class: 'charge-underline',
       dependencies: [{
         setting: 'connect',
         requiredValue: true,

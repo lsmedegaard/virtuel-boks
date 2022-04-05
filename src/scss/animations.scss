@@ -63,6 +63,41 @@
   text-align: center;
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1), 0px 6px 15px 5px #000000;
   border-radius: 10px;
-  animation: popUp_KF 3000ms infinite linear;
+  @include for-giant-screen {
+    font-size: 5rem;
+  }
 }
-//////popUP boks slut///////
+
+#toggleKnap {
+  position: relative;
+  margin-top: 4vw;
+  margin-left: 1vw;
+  width: 13vw;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.slide {
+  animation: slideForth_KF 0.1s linear both;
+}
+
+@keyframes slideForth_KF {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(114px);
+  }
+}
+.slideBack {
+  animation: slideBack_KF 0.1s linear both;
+}
+
+@keyframes slideBack_KF {
+  0% {
+    transform: translateX(114px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

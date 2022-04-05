@@ -7,6 +7,26 @@
   height: 100vh;
 
   .controls {
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .line-wrapper {
+      display: flex;
+      align-items: center;
+      grid-column: span 3;
+
+      .line {
+        width: 100%;
+        background: black;
+        height: 2px;
+        @include for-giant-screen {
+          height: 4px;
+        }
+      }
+    }
     width: 45vw;
     height: 70vh;
     border-radius: 10px;
@@ -14,22 +34,15 @@
     box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: minmax(100px, 150px);
-    .line {
-      top: 24vw;
-      width: 45vw;
-      height: 0.3vh;
-      position: absolute;
-      background-color: black;
-    }
+    grid-template-rows: 24% 4% 24% 24% 24%;
     .connection {
       grid-column: span 3;
       display: flex;
       justify-content: center;
 
       #connected {
+        margin-top: 1vw;
         z-index: 5;
-        margin-top: 2.1vw;
         position: relative;
       }
     }
@@ -42,9 +55,8 @@
     .authentication {
       font-family: $bold;
       text-align: center;
-      margin-top: 7vw;
       @include for-giant-screen {
-        font-size: 2rem;
+        font-size: 3rem;
       }
       input {
         all: unset;
@@ -58,22 +70,21 @@
           border: 3px solid #03c04a;
         }
         @include for-giant-screen {
-          font-size: 2rem;
+          font-size: 3rem;
         }
       }
       h3 {
         margin: 0;
       }
     }
-    .on {
-      margin-top: 8.6vw;
-    }
+    // .on {
+    //   margin-top: 8.6vw;
+    // }
     .boxID {
       font-family: $bold;
       text-align: center;
-      margin-top: 7vw;
       @include for-giant-screen {
-        font-size: 2rem;
+        font-size: 3rem;
       }
       input {
         all: unset;
@@ -87,7 +98,7 @@
           border: 3px solid #03c04a;
         }
         @include for-giant-screen {
-          font-size: 2rem;
+          font-size: 3rem;
         }
       }
       h3 {

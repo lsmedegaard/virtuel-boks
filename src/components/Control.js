@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import Button from './buttons/Button'
 import '../scss/control.scss'
 import Connected from './CarSVG'
 import { useState } from 'react'
@@ -75,7 +75,9 @@ function Control (props) {
     <div className="control-container">
       <div className="controls">
         <Connected settings={props.settings}/>
-        <div className="line"></div>
+        <div className="line-wrapper">
+          <div className="line"></div>
+        </div>
         <div className="boxID">
           <h3>Box ID</h3>
           <input type="text" />

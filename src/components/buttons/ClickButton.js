@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import '../scss/buttons.scss'
+import '../../scss/buttons.scss'
 import PropTypes from 'prop-types'
+import '../../scss/animations.scss'
 
-Button.propTypes = {
+ClickButton.propTypes = {
   settings: PropTypes.object,
   updateDuration: PropTypes.func,
   updateSettings: PropTypes.func
 }
 
-function Button(props) {
+function ClickButton(props) {
   const [show, setShow] = useState(false)
 
   const onClick = () => {
@@ -49,4 +50,4 @@ function Button(props) {
   )
 }
 
-export default Button
+export default ClickButton
