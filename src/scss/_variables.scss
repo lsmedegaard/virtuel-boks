@@ -11,3 +11,14 @@ $bold: "font-family", RobotoBold;
 $regular: "font-family", RobotoRegular;
 
 $red: red;
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-giant-screen {
+  @media (min-width: 3840px) {
+    @content;
+  }
+}

@@ -43,6 +43,9 @@
       font-family: $bold;
       text-align: center;
       margin-top: 7vw;
+      @include for-giant-screen {
+        font-size: 2rem;
+      }
       input {
         all: unset;
         background-color: white;
@@ -53,6 +56,9 @@
         &:hover,
         &:focus {
           border: 3px solid #03c04a;
+        }
+        @include for-giant-screen {
+          font-size: 2rem;
         }
       }
       h3 {
@@ -66,6 +72,9 @@
       font-family: $bold;
       text-align: center;
       margin-top: 7vw;
+      @include for-giant-screen {
+        font-size: 2rem;
+      }
       input {
         all: unset;
         background-color: white;
@@ -76,6 +85,9 @@
         &:hover,
         &:focus {
           border: 3px solid #03c04a;
+        }
+        @include for-giant-screen {
+          font-size: 2rem;
         }
       }
       h3 {
