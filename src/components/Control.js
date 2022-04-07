@@ -7,7 +7,8 @@ import PropTypes from 'prop-types'
 
 Control.propTypes = {
   settings: PropTypes.object,
-  setSettings: PropTypes.func
+  setSettings: PropTypes.func,
+  messageQueue: PropTypes.array
 }
 
 function Control (props) {
@@ -29,8 +30,8 @@ function Control (props) {
         }
       })
       props.settings[setting].value
-        ? props.settings[setting].stopFunction()
-        : props.settings[setting].startFunction()
+        ? props.settings[setting].stopFunction(props.messageQueue)
+        : props.settings[setting].startFunction(props.messageQueue)
       if (props.settings[setting].duration) {
         setTimeout(() => {
           props.setSettings({
@@ -40,7 +41,7 @@ function Control (props) {
               value: false
             }
           })
-          props.settings[setting].stopFunction()
+          props.settings[setting].stopFunction(props.messageQueue)
         }, props.settings[setting].duration)
       }
       setError(false)

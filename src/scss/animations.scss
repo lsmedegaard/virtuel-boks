@@ -101,3 +101,55 @@
     transform: translateX(0px);
   }
 }
+
+.change4 {
+  animation: change4_KF 3s linear infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes change4_KF {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+  100% {
+    fill: #40b549;
+  }
+}
+.change3 {
+  animation: change3_KF 3s linear infinite;
+  animation-delay: 0.8s;
+}
+
+@keyframes change3_KF {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+  100% {
+    fill: #40b549;
+  }
+}
+.change2 {
+  animation: change2_KF 3s linear infinite;
+  animation-delay: 0.4s;
+}
+
+@keyframes change2_KF {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+  100% {
+    fill: #40b549;
+  }
+}
+.change1 {
+  animation: change1_KF 3s linear infinite;
+}
+
+@keyframes change1_KF {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+  100% {
+    fill: #40b549;
+  }
+}

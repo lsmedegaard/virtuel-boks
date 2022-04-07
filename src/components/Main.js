@@ -4,23 +4,86 @@ import Control from './Control'
 import '../scss/main.scss'
 import { useState } from 'react'
 
+let interval
+let meterInterval
 
 function Main () {
 
-  const startCharging = () => {
-    console.log('opladning startet')
+  const startTransaction = (messageQueue) => {
+    const transaction = [{
+      connectorId: null, //integer connectorId > 0
+      idTag: 'idToken', //idToken
+      meterStart: null, // integer
+      timestamp: null, // dateTime
+      reservationId: [] // integer array? 
+    }]
+    setMessageQueue([...messageQueue, transaction])
+    
+    // meterInterval = setInterval(() => 
+    // {
+    //   const meterValues = [{
+    //     connectorId: null, //interger connectorId >= 0
+    //     meterValue: 'meterValue', // meterValue
+    //     transactionId: [] // interger
+    //   }] 
+    //   setMessageQueue([...messageQueue, meterValues])
+    // }, 2000)
+
   }
 
-  const stopCharging = () => {
-    console.log('opladning stoppet')
+  const stopTransaction = (messageQueue) => {
+    console.log(messageQueue, 'opladning stoppet')
+    clearInterval(meterInterval)
   }
 
+  
+
+  const powerUp = (messageQueue) => {
+    const bootNotification = [
+      2,
+      'xxx',
+      'BootNotification',
+      {
+        chargeBoxSerialNumber: '',
+        chargePointModel: '',
+        chargePointSerialNumber: '',
+        chargePointVendor: '',
+        firmwareVersion: '',
+        iccid: '',
+        imsi: '',
+        meterSerialNumber: '',
+        meterType: ''
+      }
+    ]
+    setMessageQueue([...messageQueue, bootNotification])
+
+    interval = setInterval(() => 
+    {
+      const heartbeat = [
+        2,
+        'xxx',
+        'Heartbeat',
+        {}
+      ]
+      setMessageQueue([...messageQueue, heartbeat])
+    }, 1000)
+  }
+  
+
+  const powerDown = () => {
+    clearInterval(interval)
+  }
+
+
+
+  const [messageQueue, setMessageQueue] = useState([])
+   
   const [settings, setSettings] = useState({
     on: {
       name: 'on',
       value: false,
-      startFunction:  () => {},
-      stopFunction:  () => {},
+      startFunction: messageQueue => powerUp(messageQueue),
+      stopFunction:  powerDown,
       duration: '',
       timer: false,
       dependencies: [],
@@ -81,8 +144,8 @@ function Main () {
     charge: {
       name: 'charge',
       value: false,
-      startFunction: startCharging,
-      stopFunction: stopCharging,
+      startFunction: messageQueue => startTransaction(messageQueue),
+      stopFunction: messageQueue => stopTransaction(messageQueue),
       duration: '',
       timer: true,
       dependencies: [{
@@ -107,14 +170,14 @@ function Main () {
     }
   })
 
-
-
-
   return (
     
-    <div className="grid">
-      <SVG settings={settings}/> 
-      <Control settings={settings} setSettings={setSettings}/>
+    <div>
+      <div onClick={() => console.log(messageQueue)}>se messageQueue</div>
+      <div className="grid">
+        <SVG settings={settings}/> 
+        <Control messageQueue={messageQueue} settings={settings} setSettings={setSettings}/>
+      </div>
     </div>
 
 
